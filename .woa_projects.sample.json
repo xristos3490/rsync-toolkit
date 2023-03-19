@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Project 1",
+    "value": "project1",
+    "args": [
+      "--exclude",
+      ".git",
+      "--exclude",
+      ".cache",
+      "--exclude",
+      "node_modules/",
+      "--exclude",
+      "tests/"
+    ],
+    "localDir": "/path/to/project1",
+    "remoteDir": "/path/to/remote/project1"
+  },
+  {
+    "name": "Project 2",
+    "value": "project2",
+    "args": [
+      "--exclude",
+      ".git",
+      "--exclude",
+      ".cache",
+      "--exclude",
+      "node_modules/",
+      "--exclude",
+      "tests/"
+    ],
+    "localDir": "/path/to/project2",
+    "remoteDir": "/path/to/remote/project2"
+  }
+]
