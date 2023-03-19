@@ -22,7 +22,7 @@ const PROJECTS_WOA_DEV_FILE = path.join(process.env.HOME, PROJECTS_CONFIG_FILE_N
 colors.enable();
 
 const checkNode = () => {
-  const nvmrc = fs.readFileSync(".nvmrc", "utf8").trim();
+  const nvmrc = fs.readFileSync(path.join(__dirname, ".nvmrc"), "utf8").trim();
   const majorVersion = Number.parseInt(nvmrc.split(".")[0]);
 
   // Get the system's current major version
