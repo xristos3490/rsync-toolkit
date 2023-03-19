@@ -6,7 +6,7 @@ A command line tool that connects to a remote server and syncs local directories
 
 Make sure the following software is installed on your system before using this tool:
 
--   Node.js v16 or higher
+-   Node.js v16
 -   rsync
 
 ## Usage
