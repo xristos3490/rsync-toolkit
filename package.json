@@ -1,7 +1,7 @@
 {
-  "name": "rsync-dev-toolkit",
+  "name": "rsync-toolkit",
   "version": "1.0.0",
-  "description": "Tool for managing multiple rsync destinations for woa development",
+  "description": "Tool for managing multiple rsync destinations for woa development.",
   "main": "app.js",
   "scripts": {
     "setup": "node app.js setup",
@@ -10,21 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xristos3490/rsync-dev-toolkit.git"
+    "url": "git+https://github.com/xristos3490/rsync-toolkit.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/xristos3490/rsync-dev-toolkit/issues"
+    "url": "https://github.com/xristos3490/rsync-toolkit/issues"
   },
-  "homepage": "https://github.com/xristos3490/rsync-dev-toolkit#readme",
+  "homepage": "https://github.com/xristos3490/rsync-toolkit#readme",
   "dependencies": {
     "chokidar": "^3.5.3",
     "cli-spinners": "^2.7.0",
     "colors": "^1.4.0",
     "figlet": "^1.5.2",
-    "inquirer": "^8.0.0",
-    "ssh2": "^1.11.0"
+    "inquirer": "^8.0.0"
   },
   "devDependencies": {
     "eslint": "^8.36.0",

@@ -209,7 +209,7 @@ const connectTask =
   /^[a-z0-9\.]+$/.test(process.argv[5]) &&
   (process.argv[6] === undefined || /^[a-zA-Z0-9\/\\:\._-]+$/.test(process.argv[6]));
 const rsyncTask =
-  process.argv[2] === "rsync" &&
+  process.argv[2] === "sync" &&
   process.argv[3] &&
   /^[a-z0-9]+$/.test(process.argv[3]);
 const watchTask =
@@ -228,7 +228,7 @@ if (helpTask || (!sitesTask && !isSetup && !connectTask && !rsyncTask && !watchT
     console.log("\n===============================".grey);
     console.log(
       `
-Usage: ${SCRIPT_NAME} <command> [host]
+Usage: ${SCRIPT_NAME} <command> [arguments]
 
 Commands:
   ${SCRIPT_NAME} connect [alias] [hostname] [username] [identityfilepath]
@@ -244,7 +244,7 @@ Commands:
     Examples:
       ${SCRIPT_NAME} connect myserver myserver.com john ~/.ssh/mykey.pem
 
-  ${SCRIPT_NAME} rsync [host]     Sync files with a remote host via rsync
+  ${SCRIPT_NAME} sync [host]      Sync files with a remote host via rsync
   ${SCRIPT_NAME} watch [host]     Watch files in local directories and sync changes with a remote host via rsync
   ${SCRIPT_NAME} sites            Lists all host aliases present in the ~/.ssh/config file
   ${SCRIPT_NAME} help             Display this usage information
@@ -351,8 +351,6 @@ if (sitesTask) {
       chosen_tasks.forEach((task) => {
         const result = tasks.find((obj) => obj.value === task);
         if (result.localDir && result.remoteDir) {
-          // console.log(`\nRsync: `.blue + `${result.name}`.white);
-          // console.log(`Syncing `.blue + `${result.localDir}`.bold.yellow + ` to `.blue +`${hostname}:${result.remoteDir}`.bold.yellow);
 
           const rsyncCommand = `rsync -avz ${result.args.join(" ")} ${
             result.localDir

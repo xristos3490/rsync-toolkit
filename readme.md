@@ -30,7 +30,7 @@ This command connects to the specified SSH host and adds a configuration entry i
 
 This command will connect to `example.com` using the provided username and private key file, and add a configuration entry to `~/.ssh/config` with the alias `myserver`. This will allow you to later connect to the same server simply by running `ssh myserver`.
 
-### `woa rsync [host]`
+### `woa sync [host]`
 
 Syncs local directories with remote directories using rsync.
 
