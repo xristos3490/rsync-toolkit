@@ -1,10 +1,10 @@
-# Rsync Development Toolkit
+# Rsync Toolkit
 
-A command line tool that connects to a remote server and syncs local directories with remote directories using rsync.
+The Rsync Toolkit is a command line tool that facilitates the process of syncing local directories to remote directories using the rsync utility. It provides a simple and intuitive interface for developers to manage syncing multiple directories into multiple sites easily.
 
 ## Prerequisites
 
-Make sure the following software is installed on your system before using this tool:
+Before using this tool, ensure the following software is installed on your system:
 
 -   Node.js v16
 -   rsync
@@ -26,21 +26,21 @@ This command connects to the specified SSH host and adds a configuration entry i
 
 #### Example usage
 
-`woa connect myserver example.com myusername ~/.ssh/id_rsa`
+`woa connect mysite myhost username /path/to/private/key`
 
-This command will connect to `example.com` using the provided username and private key file, and add a configuration entry to `~/.ssh/config` with the alias `myserver`. This will allow you to later connect to the same server simply by running `ssh myserver`.
+This command will connect to `myhost` using the provided username and private key file, and add a configuration entry to `~/.ssh/config` with the alias `mysite`. This will allow you to later connect to the same server simply by running `ssh mysite`.
 
 ### `woa sync [host]`
 
 Syncs local directories with remote directories using rsync.
 
-`woa rsync myserver`
+`woa sync mysite`
 
 ### `woa watch [host]`
 
 Listens for changes in local directories and syncs them with remote directories using rsync.
 
-`woa watch myserver`
+`woa watch mysite`
 
 ### `woa sites`
 
@@ -76,11 +76,15 @@ To install this tool, follow the steps below:
     "remoteDir": "/path/to/remote/project2"
   }
 ]
-
 ```
-*Hint:* Make sure not to include any trailing commas at the end of each object or property.
 
-6. _(Optional)_ Run the `source` command as described to update the shell
+**Note:** Make sure not to include any trailing commas at the end of each object or property.
+
+6.  _(Optional)_ Run the `source` command as described to update the shell.
+
+## Disclaimer
+
+The Rsync Toolkit is a one-way syncing tool, meaning it only supports syncing from local directories to remote directories and not vice versa. We recommend taking appropriate precautions before using the tool to ensure that your data is not lost or corrupted during the syncing process.
 
 ## Contributing
 
@@ -89,8 +93,4 @@ Contributions are welcome! Please follow these steps to contribute:
 1.  Create a new branch for your feature or bug fix
 2.  Write your code for your changes
 3.  Commit your changes and push them
-4.  Submit a pull request to the `main` branch of the original repository
-
-Please ensure your code adheres to the existing code style and passes the linter checks.
-
-Thank you for contributing!
+4.  Submit a pull request
