@@ -23,7 +23,8 @@
     "cli-spinners": "^2.7.0",
     "colors": "^1.4.0",
     "figlet": "^1.5.2",
-    "inquirer": "^8.0.0"
+    "inquirer": "^8.0.0",
+    "ssh2": "^1.12.0"
   },
   "devDependencies": {
     "eslint": "^8.36.0",
